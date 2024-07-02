@@ -1,0 +1,52 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Question {
+    private String questionText;
+    private List<String> options;
+    private int correctAnswerIndex;
+
+    public Question(String questionText, List<String> options, int correctAnswerIndex) {
+        this.questionText = questionText;
+        this.options = new ArrayList<>(options);
+        this.correctAnswerIndex = correctAnswerIndex;
+    }
+
+    public String getQuestionText() {
+        return questionText;
+    }
+
+    public List<String> getOptions() {
+        return options;
+    }
+
+    public int getCorrectAnswerIndex() {
+        return correctAnswerIndex;
+    }
+
+    public boolean isCorrect(int answerIndex) {
+        return answerIndex == correctAnswerIndex;
+    }
+}
+
+class Quiz {
+    private String title;
+    private List<Question> questions;
+
+    public Quiz(String title) {
+        this.title = title;
+        this.questions = new ArrayList<>();
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void addQuestion(Question question) {
+        questions.add(question);
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+}
